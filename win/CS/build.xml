@@ -93,19 +93,19 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(SignThumbprint)'!=''">
-    <SignType>/fd SHA256</SignType>
-    <SignEnabled>true</SignEnabled>
+	  <SignParameters>/fd SHA256</SignParameters>
+	  <SignEnabled>true</SignEnabled>
   </PropertyGroup>
 
   <!-- Signs the application binaries. Runs before makensis so the signed files are packaged. -->
   <Target Name="CodeSign" Condition="'$(SignEnabled)' == 'true'">
-    <Exec Command="&quot;$(SignToolLocation)&quot; sign $(SignType) /sha1 $(SignThumbprint) $(SignTimestamp) $(SignTimestampServer) /debug /v &quot;$(MSBuildProjectDirectory)\HandBrakeWPF\bin\publish\HandBrake.exe&quot;" />
-    <Exec Command="&quot;$(SignToolLocation)&quot; sign $(SignType) /sha1 $(SignThumbprint) $(SignTimestamp) $(SignTimestampServer) /debug /v &quot;$(MSBuildProjectDirectory)\HandBrakeWPF\bin\publish\HandBrake.Worker.exe&quot;" />
+	  <Exec Command="&quot;$(SignToolLocation)&quot; sign $(SignParameters) /sha1 $(SignThumbprint) $(SignTimestamp) $(SignTimestampServer) /debug /v &quot;$(MSBuildProjectDirectory)\HandBrakeWPF\bin\publish\HandBrake.exe&quot;" />
+	  <Exec Command="&quot;$(SignToolLocation)&quot; sign $(SignParameters) /sha1 $(SignThumbprint) $(SignTimestamp) $(SignTimestampServer) /debug /v &quot;$(MSBuildProjectDirectory)\HandBrakeWPF\bin\publish\HandBrake.Worker.exe&quot;" />
   </Target>
 
   <!-- Signs the installer produced by makensis. -->
   <Target Name="CodeSignInstaller" Condition="'$(SignEnabled)' == 'true'">
-    <Exec Command="&quot;$(SignToolLocation)&quot; sign $(SignType) /sha1 $(SignThumbprint) $(SignTimestamp) $(SignTimestampServer) /debug /v &quot;$(MSBuildProjectDirectory)\HandBrakeWPF\bin\publish\*Win_GUI.exe&quot;" />
+	  <Exec Command="&quot;$(SignToolLocation)&quot; sign $(SignParameters) /sha1 $(SignThumbprint) $(SignTimestamp) $(SignTimestampServer) /debug /v &quot;$(MSBuildProjectDirectory)\HandBrakeWPF\bin\publish\*Win_GUI.exe&quot;" />
   </Target>
 
 </Project>
