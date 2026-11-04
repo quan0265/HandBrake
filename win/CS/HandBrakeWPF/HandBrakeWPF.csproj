@@ -17,7 +17,7 @@
     <RepositoryType>git</RepositoryType>
     <AssemblyVersion>1.11.0.0</AssemblyVersion>
     <Version>1.11.0</Version>
-    <Platforms>AnyCPU</Platforms>
+    <Platforms>AnyCPU;x64</Platforms>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ApplicationIcon>handbrakepineapple.ico</ApplicationIcon>
     <StartupObject />
@@ -36,7 +36,19 @@
     <NoWarn>1701;1702;CS0067</NoWarn>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors>
+    <NoWarn>1701;1702;CS0067</NoWarn>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\Release</OutputPath>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors>
+    <NoWarn>1701;1702;CS0067</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutputPath>bin\Release</OutputPath>
     <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors>
     <NoWarn>1701;1702;CS0067</NoWarn>
@@ -136,6 +148,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="hb.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="portable.ini.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

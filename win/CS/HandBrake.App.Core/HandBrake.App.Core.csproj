@@ -12,7 +12,7 @@
 		<RepositoryUrl>https://github.com/HandBrake/HandBrake</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Video Transcoder</PackageTags>
-		<Platforms>AnyCPU</Platforms>
+		<Platforms>AnyCPU;x64</Platforms>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>

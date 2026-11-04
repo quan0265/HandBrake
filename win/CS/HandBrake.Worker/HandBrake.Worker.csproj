@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/HandBrake/HandBrake</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <AssemblyVersion>1.11.0.0</AssemblyVersion>
-    <Platforms>AnyCPU</Platforms>
+    <Platforms>AnyCPU;x64</Platforms>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ApplicationIcon>handbrakepineapple.ico</ApplicationIcon>
     <StartupObject />
